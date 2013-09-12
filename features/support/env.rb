@@ -51,3 +51,9 @@ ActionController::Base.allow_rescue = false
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Dir[Rails.root.join("lib/test_helpers/**/*.rb")].each {|f| require f}
+
+WebMock.disable_net_connect!(:allow_localhost => true)
+Before do
+  webmock_twitter_success
+end

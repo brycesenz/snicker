@@ -1,5 +1,5 @@
 module WebmockHelper
-  MOCKS_DIRECTORY = "#{Rails.root}/spec/support"
+  MOCKS_DIRECTORY = "#{Rails.root}/lib/test_helpers"
 
   #Note:  To get example responses, use Hurl.it  
   def webmock_twitter_success
@@ -18,7 +18,7 @@ RSpec.configure do |config|
   config.include WebmockHelper
 end
 
-#if respond_to?(:World)
-#  require 'webmock/cucumber'
-#  World(WebmockHelper)
-#end 
+if respond_to?(:World)
+  require 'webmock/cucumber'
+  World(WebmockHelper)
+end 

@@ -6,6 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join("lib/test_helpers/**/*.rb")].each {|f| require f}
 
 WebMock.disable_net_connect!(:allow_localhost => true)
 #WebMock.allow_net_connect!

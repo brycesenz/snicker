@@ -1,6 +1,6 @@
 Feature: Viewer visits the home page
   In order to read the page
-  As an anonymous user
+  As a visitor
   I want to see the home page of my app
 
   Scenario: View home page 
