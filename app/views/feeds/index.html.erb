@@ -1,0 +1,8 @@
+<h1>The Feed</h1>
+<h2><%= @feed.title %></h1>
+
+<% @terms.each do |term| %>
+  <h2><%= term.title %></h1>
+  <h2><%= term.search_phrase %></h2>
+<% end %>
+
