@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Feed do
-  # Model & Factory Validation
+  # Initialization
   #----------------------------------------------------------------------------
   describe "initialization", :initialization => true do
     let(:feed) { Feed.new }
@@ -15,6 +15,8 @@ describe Feed do
     end
   end
   
+  # Attributes
+  #----------------------------------------------------------------------------
   describe "attributes", :attributes => true do
     let(:feed) { Feed.new }
     

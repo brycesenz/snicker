@@ -1,0 +1,90 @@
+HTTP/1.1 200 OK
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+content-length: 3007
+content-type: application/json;charset=utf-8
+date: Thu, 12 Sep 2013 03:30:14 GMT
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+last-modified: Thu, 12 Sep 2013 03:30:14 GMT
+pragma: no-cache
+server: tfe
+set-cookie: lang=en
+set-cookie: guest_id=v1%3A137895661484134492; Domain=.twitter.com; Path=/; Expires=Sat, 12-Sep-2015 03:30:14 UTC
+status: 200 OK
+strict-transport-security: max-age=631138519
+x-access-level: read
+x-frame-options: SAMEORIGIN
+x-rate-limit-limit: 180
+x-rate-limit-remaining: 179
+x-rate-limit-reset: 1378957514
+x-transaction: 42cd7137ddb8af88
+
+{
+  "statuses": [
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "ja"
+      },
+      "created_at": "Thu Sep 12 03:29:39 +0000 2013",
+      "id": 377997407738273794,
+      "id_str": "377997407738273794",
+      "text": "Hooray for Ruby on Rails  https://t.co/oHMHOuMRtv",
+      "source": "<a href=\"http://www.apple.com\" rel=\"nofollow\">Safari on iOS</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 157624853,
+        "id_str": "157624853",
+        "name": "Junichi Ito",
+        "screen_name": "jnchito",
+        "location": "Hyogo, Japan",
+        "description": "Programmer, blogger, musician.",
+        "url": "http://t.co/JbkrMwvMh1",
+        "entities": {
+        },
+        "protected": false,
+        "followers_count": 875,
+        "friends_count": 166,
+        "listed_count": 55,
+        "created_at": "Sun Jun 20 10:53:15 +0000 2010",
+        "favourites_count": 219,
+        "utc_offset": 32400,
+        "time_zone": "Osaka",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 8681,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "ja"
+    }
+  ],
+  "search_metadata": {
+    "completed_in": 0.02,
+    "max_id": 377997407738273794,
+    "max_id_str": "377997407738273794",
+    "next_results": "?max_id=377997407738273793&q=Rails&count=1&include_entities=1&result_type=recent",
+    "query": "Rails",
+    "refresh_url": "?since_id=377997407738273794&q=Rails&result_type=recent&include_entities=1",
+    "count": 1,
+    "since_id": 0,
+    "since_id_str": "0"
+  }
+}
+

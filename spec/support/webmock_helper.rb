@@ -1,10 +1,15 @@
 module WebmockHelper
-  MOCKS_DIRECTORY = "#{Rails.root}/lib/credda/test_helpers/webmock"
+  MOCKS_DIRECTORY = "#{Rails.root}/spec/support"
 
   #Note:  To get example responses, use Hurl.it  
-  def webmock_geocoder
-    response = File.new "#{MOCKS_DIRECTORY}/geocoder/geocoder_success.json"
-    stub_request(:get, /http:\/\/maps.googleapis.com\/maps\/api\/geocode\/json.*/).to_return(response)
+  def webmock_twitter_success
+    response = File.new "#{MOCKS_DIRECTORY}/twitter_response.json"
+    stub_request(:get, /https:\/\/api.twitter.com\/1.1\/search\/tweets.json.*/).to_return(response)
+  end
+
+  def webmock_twitter_error
+    response = File.new "#{MOCKS_DIRECTORY}/twitter_error.json"
+    stub_request(:get, /https:\/\/api.twitter.com\/1.1\/search\/tweets.json.*/).to_return(response)
   end
 end
 

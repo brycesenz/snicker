@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Term do
-  # Model & Factory Validation
+  # Initialization
   #----------------------------------------------------------------------------
   describe "initialization", :initialization => true do
     let(:term) { Term.new }

@@ -7,7 +7,7 @@ require 'rspec/rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-#WebMock.disable_net_connect!(:allow_localhost => true)
+WebMock.disable_net_connect!(:allow_localhost => true)
 #WebMock.allow_net_connect!
 
 RSpec.configure do |config|
@@ -42,6 +42,8 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    webmock_twitter_success
+#    webmock_twitter_error
   end
   
   config.after(:all) do
