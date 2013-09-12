@@ -1,0 +1,60 @@
+@import "compass/css3/images";
+@import "compass/css3/opacity";
+@import "compass/css3/border-radius";
+
+// Top Bar Navigation
+nav.top-bar {
+  a#logo {
+    img {
+      margin-top: 7px;
+      margin-left: 15px;
+    }
+  }
+  section {
+    ul {
+      background: none;
+      li {
+        background: none;      
+        &:hover {
+          background: #333333;
+          @include opacity(10%);
+        }
+  
+        &.active {
+          background: #000000;
+          @include opacity(30%);
+        }
+
+        &.has-form {
+          background: none;
+          &:hover {
+            background: none;
+          }
+        }
+
+        a:not(.button) {
+          background: none;
+        }
+        
+        .button {
+          background: #FF8500; 
+          
+          &:hover {
+            background: #CC6A00;             
+          }
+        }
+        
+        
+      }
+    }
+  }
+  
+  li.has-form {
+    a.button {
+      height: 3em;
+      padding: 5px 15px;
+      top: 10px;
+    }
+  }
+  @include background(image-url("blackmamba-background.png"));
+}

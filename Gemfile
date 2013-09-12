@@ -13,16 +13,25 @@ gem 'twitter'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'compass-rails', '>= 1.0.3'
+  gem 'zurb-foundation', '~> 4.1.1'
+
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-# This Webserver
+gem 'jquery-rails', '~> 2.1'
+gem 'jquery-ui-rails', '~> 2.0.0'
+gem 'gritter', '1.0.3'
+
+gem 'slim', '~> 1.3.9'
+# Thin Webserver
 gem 'thin'
 
 group :development, :test do
   gem 'rspec', '~> 2.13.0'
   gem 'rspec-rails', '>= 2.13.2'
+  gem 'capybara', '= 2.1.0'
+  gem 'cucumber-rails', :require => false
 end
 
 group :test do

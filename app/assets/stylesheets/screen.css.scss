@@ -1,0 +1,25 @@
+@import "compass/css3/images";
+
+/* Body Sizing & Layout */
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  // This is the color that flows into the footer
+  @include background(image-url("grey-texture-background-small.png"));
+}
+
+#main-wrapper {
+  // Background of our main div, with all of our content
+  @include background(image-url("crackle-bright-background.png"));
+}
+
+.content {
+  padding: 10px 5px;
+}
+
+/* Fonts */
+h1, h2, h3, h4, h5, p {
+}

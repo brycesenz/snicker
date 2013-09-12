@@ -16,6 +16,8 @@ class Feed
   def add_entry
     entry_source.call.tap do |entry|
       entry.feed = self
+      entries << entry
+      return entry
     end
   end
     

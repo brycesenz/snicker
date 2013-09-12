@@ -1,0 +1,10 @@
+div.row
+  div.large-12.columns
+    h1 The Feed
+    h2 = @feed.title
+div.row
+  div.large-12.colums
+    - @feed.entries.each do |entry|
+      h2 = entry.search_text
+      - entry.results.each do |result|
+        p = result.to_s

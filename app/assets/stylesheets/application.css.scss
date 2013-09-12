@@ -9,5 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require jquery.ui.slider
+ *= require 'foundation_and_overrides'
+ *= require 'font-face-definitions'
+ *= require 'screen'
+ *= require 'navigation'
+ *= require 'pages'
+ *= require 'forms'
+ *= require 'gritter'
+ *= require 'messages'
  */

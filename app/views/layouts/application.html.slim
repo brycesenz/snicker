@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    meta name="author" content="Snicker"
+    meta name="description" content="A simple app to remind myself why I don't use twitter"
+    meta name="keywords" content="twitter-is-terrible"
+    title = "Snicker - All the Worst of Twitter"
+    = stylesheet_link_tag :application, :media => "all"
+    = javascript_include_tag "vendor/custom.modernizr"
+    = javascript_include_tag :application, :media => "all"
+    = csrf_meta_tags
+    = yield :head
+  body[class="anon"]
+    header
+      = render 'layouts/shared/header'
+    div#main-wrapper
+      div[id="main"]
+        = render 'layouts/shared/messages'
+        = content_for?(:content) ? yield(:content) : yield
+    footer
+      = render 'layouts/shared/footer'
+    javascript:
+      $(document).foundation();
+
