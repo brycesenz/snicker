@@ -76,6 +76,17 @@ describe Term do
       before(:each) do
         term.search_text = "testing"
       end
+      
+      context "with stubbed result" do
+        before(:each) do
+          TwitterService.any_instance.stub(:search).and_return(["a", "b", "c", "d"])
+          term.get_results
+        end
+        
+        it "should have same results" do
+          term.results.should eq(["a", "b", "c", "d"])
+        end
+      end
 
       context "with successful twitter request" do
         before(:each) do

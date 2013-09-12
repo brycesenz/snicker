@@ -12,20 +12,4 @@ class TermsController < ApplicationController
       render :action => :new
     end
   end
-  
-  def show
-    
-  end
-
-  def edit
-    
-  end
-  
-  def update
-    
-  end
-  
-  def destroy
-    
-  end
 end

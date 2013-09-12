@@ -1,10 +1,12 @@
 div.row
   div.large-12.columns
-    h1 The Feed
-    h2 = @feed.title
+    h1 = @feed.title
 div.row
-  div.large-12.colums
+  div.large-9.columns
+    h2 Current Results
     - @feed.entries.each do |entry|
-      h2 = entry.search_text
+      h4 = "Search Text = #{entry.search_text}"
       - entry.results.each do |result|
-        p = result.to_s
+        p.tweet = result.to_s
+  div.large-3.columns
+    = link_to "Add New Term", new_term_path, :id => "new_term", :class => "button radius"

@@ -13,7 +13,9 @@ class Term
   end
 
   def get_results
-    results << TwitterService.new.search(@search_text, 5)
+    TwitterService.new.search(@search_text, 5).each do |tweet|
+      results << tweet
+    end
   end
   
   def purge_results
