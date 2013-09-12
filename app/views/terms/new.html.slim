@@ -1,0 +1,9 @@
+div.row
+  div.large-8.columns[id="new-term"]
+    h2 Add new search term
+    = form_for(@term, :url => terms_path, :method => :post, :html => { :class => "" }) do |f|
+      div.row
+        div.large-8.columns
+          = f.label "Search Text"
+          = f.text_field :search_text, :placeholder => "yolo"
+      = f.submit "Add Term", :class => "radius button", :id => "submit_term"

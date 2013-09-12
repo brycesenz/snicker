@@ -3,17 +3,30 @@ class Term
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_writer :feed, :search_text
-  attr_reader :feed, :results, :search_text
+  attr_accessor :feed, :search_text, :results
+  validates :feed, :presence => true
   validates :search_text, :presence => true
   
-  def initialize(*args)
-    @search_text = nil
-    @feed = nil
-    @results = []
+  def initialize(attrs={})
+    attrs.each do |k,v| send("#{k}=",v) end
+    @results ||= []
+  end
+
+  def get_results
+    results << TwitterService.new.search(@search_text, 5)
   end
   
-  def get_results
-    @results = TwitterService.new.search(@search_text, 5)
+  def purge_results
+    results.clear
+  end
+  
+  def publish
+    return false unless valid?
+    self.get_results
+    feed.add_entry(self)
+  end
+  
+  def persisted?
+    false
   end
 end

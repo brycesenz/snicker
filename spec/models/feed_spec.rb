@@ -30,15 +30,46 @@ describe Feed do
       end
     end
     
-    describe "add_entry" do
-      let(:entry) { feed.add_entry }
-      
-      it "is an instance of Term" do
-        entry.should be_an_instance_of(Term)
+    describe "new_term" do
+      context "without args*" do
+        let(:term) { feed.new_term }
+        
+        it "is an instance of Term" do
+          term.should be_an_instance_of(Term)
+        end
+  
+        it "has our feed as its feed" do
+          term.feed.should eq(feed)
+        end
       end
+      
+      context "with args* (tightly coupled)", :bad => true do
+        let(:term) { feed.new_term(:search_text => "Rails") }
+        
+        it "is an instance of Term" do
+          term.should be_an_instance_of(Term)
+        end
+  
+        it "has our feed as its feed" do
+          term.feed.should eq(feed)
+        end        
 
-      it "has our feed as its feed" do
-        entry.feed.should eq(feed)
+        it "has 'Rails' as its search text" do
+          term.search_text.should eq("Rails")
+        end        
+      end
+    end
+
+    describe "add_entry" do
+      let(:feed) { Feed.new }
+      let(:term) { Term.new }
+      
+      before(:each) do
+        feed.add_entry(term)
+      end
+      
+      it "adds term to feed's entries array" do
+        feed.entries.should include(term)
       end
     end
   end

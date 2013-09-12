@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  respond_to :html
+  before_filter :initialize_feed
   
-  THE_FEED = Feed.new
+  private
+  def initialize_feed
+    # From Initializer
+    @feed = MASTER_FEED
+  end
 end
