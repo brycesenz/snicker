@@ -5,7 +5,7 @@ class Feed
   
   attr_reader :entries
   
-  def initialize
+  def initialize(*args)
     @entries = []
   end
   
@@ -13,14 +13,14 @@ class Feed
     "All the worst things on Twitter"
   end
   
-  def new_term
-    term_source.call.tap do |term|
-      term.feed = self
+  def add_entry
+    entry_source.call.tap do |entry|
+      entry.feed = self
     end
   end
-  
+    
   private
-  def term_source
-    @term_source ||= Term.public_method(:new)    
+  def entry_source
+    @entry_source ||= Term.public_method(:new)    
   end
 end

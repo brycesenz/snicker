@@ -1,7 +1,11 @@
 class FeedsController < ApplicationController
   def index
+    if THE_FEED.entries.empty
+      THE_FEED.add_entry
+    end
     @feed = THE_FEED
-    @terms = THE_FEED.entries
+    
+    
   end
   
   def new

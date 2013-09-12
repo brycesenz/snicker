@@ -30,15 +30,15 @@ describe Feed do
       end
     end
     
-    describe "new_term" do
-      let(:term) { feed.new_term }
+    describe "add_entry" do
+      let(:entry) { feed.add_entry }
       
       it "is an instance of Term" do
-        term.should be_an_instance_of(Term)
+        entry.should be_an_instance_of(Term)
       end
 
-      it "has feed as its feed" do
-        term.feed.should eq(feed)
+      it "has our feed as its feed" do
+        entry.feed.should eq(feed)
       end
     end
   end
